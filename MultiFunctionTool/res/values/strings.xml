@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MultiFunctionTool</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_hosttabact">Tabhost View</string>
+    <string name="action_listviewact">Listview View</string>
+    <string name="action_fragmentact">Fragment View</string>
+    <string name="main_background_desc">just the background from Mainactivity</string>
+    <string name="main_greetings_text">Just click on option</string>
+
+</resources>
