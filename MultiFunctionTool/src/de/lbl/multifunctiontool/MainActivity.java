@@ -2,10 +2,10 @@ package de.lbl.multifunctiontool;
 
 import java.io.IOException;
 
+import de.lbl.multifunctiontool.basics.Helper;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -26,6 +26,7 @@ import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends ActionBarActivity implements OnMenuItemClickListener
@@ -74,31 +75,26 @@ public class MainActivity extends ActionBarActivity implements OnMenuItemClickLi
 				switch(which)
 				{
 					case 0:
-						openLook(Looks.LISTVIEW);
+						Helper.openLook(MainActivity.this, Looks.LISTVIEW);
 						break;
 					case 1:
-						openLook(Looks.TABHOST);
+						Helper.openLook(MainActivity.this, Looks.TABHOST);
 						break;
 					case 2:
-						openLook(Looks.FRAGMENT);
+						Helper.openLook(MainActivity.this, Looks.FRAGMENT);
 						break;
 				}
 				Toast.makeText(MainActivity.this, ""+which, Toast.LENGTH_SHORT).show();
 				dialog.cancel();
 			}
-		});
-
-		// create alert dialog
-//		AlertDialog alertDialog = alertDialogBuilder.create();
-
-		// show it
-		alertDialogBuilder.show();
+		})
+		.show();
 	}
 
 
 	public void openPopMenu(View v)
 	{
-		if (Build.VERSION.SDK_INT >= 11) // TODO api lvl check
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) // TODO api lvl check
 		{
 			PopupMenu popMenu = new PopupMenu(this, v);
 			MenuInflater inflater = popMenu.getMenuInflater();
@@ -145,13 +141,13 @@ public class MainActivity extends ActionBarActivity implements OnMenuItemClickLi
 			case R.id.action_settings:
 				return true;
 			case R.id.action_listviewact:
-				openLook(Looks.LISTVIEW);
+				Helper.openLook(this, Looks.LISTVIEW);
 				return true;
 			case R.id.action_hosttabact:
-				openLook(Looks.TABHOST);
+				Helper.openLook(this, Looks.TABHOST);
 				return true;
 			case R.id.action_fragementact:
-				openLook(Looks.FRAGMENT);
+				Helper.openLook(this, Looks.FRAGMENT);
 				return true;
 		}
 
@@ -159,19 +155,7 @@ public class MainActivity extends ActionBarActivity implements OnMenuItemClickLi
 	}
 	
 	
-	private void openLook(Looks look)
-	{
-		Intent i = new Intent();
-		switch(look){
-			case FRAGMENT:
-				break;
-			case LISTVIEW:
-				break;
-			case TABHOST:
-				break;
-			default:
-				break;}
-	}
+
 
 	
 	/**
