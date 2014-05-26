@@ -1,7 +1,5 @@
 package de.lbl.multifunctiontool.dragandrop;
 
-import java.io.IOException;
-
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.os.Build;
@@ -12,8 +10,7 @@ import android.view.View.DragShadowBuilder;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
-import de.lbl.multifunctiontool.basics.Helper;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropData.SpotColor;
+import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData.SpotColor;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class DragAndDropSpotListener implements OnTouchListener,OnDragListener
@@ -43,8 +40,8 @@ public class DragAndDropSpotListener implements OnTouchListener,OnDragListener
 		int action = event.getAction();
 		ImageView thisView = (ImageView) v;
 		ImageView draggedView = (ImageView) event.getLocalState();
-		SpotColor thisColor = DragAndDropData.getIntance().dndsd[thisView.getId()].getColor();
-		SpotColor draggedColor = DragAndDropData.getIntance().dndsd[draggedView.getId()].getColor();
+		SpotColor thisColor = DragAndDropSpotData.getIntance().dndsd[thisView.getId()];
+		SpotColor draggedColor = DragAndDropSpotData.getIntance().dndsd[draggedView.getId()];
 
 		switch (action)
 		{
@@ -62,7 +59,7 @@ public class DragAndDropSpotListener implements OnTouchListener,OnDragListener
 
 				if (!thisColor.equals(draggedColor))
 				{
-					DragAndDropData.getIntance().setColor(thisView.getId(), draggedColor);
+					DragAndDropSpotData.getIntance().setColor(thisView.getId(), draggedColor);
 					thisView.setImageDrawable(SpotColor.getDrawable(draggedColor));
 				}
 				else

@@ -10,16 +10,16 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import de.lbl.multifunctiontool.R;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropData.SpotColor;
+import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData.SpotColor;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class DragAndDropAdapter extends BaseAdapter
+public class DragAndDropSpotAdapter extends BaseAdapter
 {
 	private Context					mContext;
 
 
 
-	public DragAndDropAdapter(Context c)
+	public DragAndDropSpotAdapter(Context c)
 	{
 		mContext = c;
 	}
@@ -28,14 +28,14 @@ public class DragAndDropAdapter extends BaseAdapter
 	@Override
 	public int getCount()
 	{
-		return DragAndDropData.getIntance().dndsd.length;
+		return DragAndDropSpotData.getIntance().dndsd.length;
 	}
 
 
 	@Override
 	public Object getItem(int position)
 	{
-		return DragAndDropData.getIntance().dndsd[position];
+		return DragAndDropSpotData.getIntance().dndsd[position];
 	}
 
 
@@ -56,7 +56,7 @@ public class DragAndDropAdapter extends BaseAdapter
 			imageView.setLayoutParams(new GridView.LayoutParams(400, 620));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-			imageView.setImageDrawable(SpotColor.getDrawable(DragAndDropData.getIntance().dndsd[position].getColor()));
+			imageView.setImageDrawable(SpotColor.getDrawable(DragAndDropSpotData.getIntance().dndsd[position]));
 			DragAndDropSpotListener dndl = new DragAndDropSpotListener();
 			imageView.setOnTouchListener(dndl);
 			imageView.setOnDragListener(dndl);

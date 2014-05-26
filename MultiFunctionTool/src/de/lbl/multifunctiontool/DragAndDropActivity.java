@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropAdapter;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropData;
+import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotAdapter;
+import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData;
 
 public class DragAndDropActivity extends Activity
 {
@@ -18,9 +18,9 @@ public class DragAndDropActivity extends Activity
 		setContentView(R.layout.activity_draganddrop);
 
 		GridView gridview = (GridView) findViewById(R.id.dnd_gridview);
-		DragAndDropData.getIntance().initiateData(this);
+		DragAndDropSpotData.getIntance().initiateData(this);
 		
-		BaseAdapter adapter = new DragAndDropAdapter(this);
+		BaseAdapter adapter = new DragAndDropSpotAdapter(this);
 		gridview.setAdapter(adapter);
 
 //		gridview.setOnItemClickListener(new OnItemClickListener(){
