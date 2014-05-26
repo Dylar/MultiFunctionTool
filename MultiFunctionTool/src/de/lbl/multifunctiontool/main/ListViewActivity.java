@@ -1,6 +1,5 @@
-package de.lbl.multifunctiontool;
+package de.lbl.multifunctiontool.main;
 
-import de.lbl.multifunctiontool.main.Helper;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;

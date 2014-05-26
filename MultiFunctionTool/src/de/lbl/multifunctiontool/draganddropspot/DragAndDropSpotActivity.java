@@ -25,16 +25,6 @@ public class DragAndDropSpotActivity extends ActionBarActivity
 		{
 			getSupportFragmentManager().beginTransaction().add(R.id.container_draganddropspot, new DragAndDropSpotFragment()).commit();
 		}
-
-		
-
-//		gridview.setOnItemClickListener(new OnItemClickListener(){
-//			public void onItemClick(AdapterView<?> parent, View v, int position, long id)
-//			{
-//				
-//				Toast.makeText(DragAndDropActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-//			}
-//		});
 	}
 	
 	
@@ -49,7 +39,7 @@ public class DragAndDropSpotActivity extends ActionBarActivity
 		{
 			View rootView = inflater.inflate(R.layout.fragment_draganddropspot, container, false);
 			
-			GridView gridview = (GridView) rootView.findViewById(R.id.dnd_gridview);
+			GridView gridview = (GridView) rootView.findViewById(R.id.dnds_gridview);
 			DragAndDropSpotData.getIntance().initiateData(getActivity());
 			
 			BaseAdapter adapter = new DragAndDropSpotAdapter(getActivity());
