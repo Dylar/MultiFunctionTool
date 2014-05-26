@@ -1,4 +1,4 @@
-package de.lbl.multifunctiontool.dragandrop;
+package de.lbl.multifunctiontool.draganddropspot;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import de.lbl.multifunctiontool.R;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData.SpotColor;
+import de.lbl.multifunctiontool.draganddropspot.DragAndDropSpotData.SpotColor;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class DragAndDropSpotAdapter extends BaseAdapter

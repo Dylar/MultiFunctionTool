@@ -1,9 +1,10 @@
 package de.lbl.multifunctiontool;
 
-import de.lbl.multifunctiontool.basics.Helper;
+import de.lbl.multifunctiontool.main.Helper;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -23,10 +24,18 @@ public class ListViewActivity extends ListActivity
 	protected void onListItemClick(ListView list, View view, int position, long id)
 	{
 		super.onListItemClick(list, view, position, id);
-		String testName = Helper.list[position];
+		String name = Helper.list[position];
 		try
 		{
-			Class clazz = Class.forName(Helper.rootPackagePath + testName + "Activity");
+			StringBuilder sb = new StringBuilder(Helper.rootPackagePath)
+			.append(name.toLowerCase())
+			.append(".")
+			.append(name)
+			.append("Activity");
+			
+			Log.d("MUH", sb.toString());
+			
+			Class clazz = Class.forName(sb.toString());
 			Intent intent = new Intent(this, clazz);
 			startActivity(intent);
 		}

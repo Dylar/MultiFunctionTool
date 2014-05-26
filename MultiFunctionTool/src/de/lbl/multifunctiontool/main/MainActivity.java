@@ -1,8 +1,13 @@
-package de.lbl.multifunctiontool;
+package de.lbl.multifunctiontool.main;
 
 import java.io.IOException;
 
-import de.lbl.multifunctiontool.basics.Helper;
+import de.lbl.multifunctiontool.R;
+import de.lbl.multifunctiontool.R.color;
+import de.lbl.multifunctiontool.R.id;
+import de.lbl.multifunctiontool.R.layout;
+import de.lbl.multifunctiontool.R.menu;
+import de.lbl.multifunctiontool.R.string;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -45,7 +50,7 @@ public class MainActivity extends ActionBarActivity implements OnMenuItemClickLi
 
 		if (savedInstanceState == null)
 		{
-			getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
+			getSupportFragmentManager().beginTransaction().add(R.id.container_main, new PlaceholderFragment()).commit();
 		}
 	}
 
@@ -163,10 +168,6 @@ public class MainActivity extends ActionBarActivity implements OnMenuItemClickLi
 	 */
 	public static class PlaceholderFragment extends Fragment
 	{
-
-		public PlaceholderFragment()
-		{}
-
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

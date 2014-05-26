@@ -1,4 +1,4 @@
-package de.lbl.multifunctiontool.basics;
+package de.lbl.multifunctiontool.main;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,12 +10,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import de.lbl.multifunctiontool.ListViewActivity;
-import de.lbl.multifunctiontool.MainActivity.Looks;
+import de.lbl.multifunctiontool.main.MainActivity.Looks;
 
 public class Helper
 {
 	public static String rootPackagePath = "de.lbl.multifunctiontool.";
-	public static String list[] = {"Main", "DragAndDrop"};
+	public static String list[] = {"Main", "DragAndDropSpot"};
 	
 	public static Bitmap getBitmapFromAsset(Context con, String strName) throws IOException
 	{

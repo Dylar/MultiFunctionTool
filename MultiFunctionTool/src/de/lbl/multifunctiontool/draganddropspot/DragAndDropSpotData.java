@@ -1,12 +1,12 @@
-package de.lbl.multifunctiontool.dragandrop;
+package de.lbl.multifunctiontool.draganddropspot;
 
 import java.io.IOException;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import de.lbl.multifunctiontool.R;
-import de.lbl.multifunctiontool.basics.Helper;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData.SpotColor;
+import de.lbl.multifunctiontool.draganddropspot.DragAndDropSpotData.SpotColor;
+import de.lbl.multifunctiontool.main.Helper;
 
 public class DragAndDropSpotData
 {

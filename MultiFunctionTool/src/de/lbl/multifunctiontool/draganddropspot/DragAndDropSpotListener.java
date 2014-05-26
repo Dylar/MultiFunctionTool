@@ -1,4 +1,4 @@
-package de.lbl.multifunctiontool.dragandrop;
+package de.lbl.multifunctiontool.draganddropspot;
 
 import android.annotation.TargetApi;
 import android.content.ClipData;
@@ -10,7 +10,7 @@ import android.view.View.DragShadowBuilder;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
-import de.lbl.multifunctiontool.dragandrop.DragAndDropSpotData.SpotColor;
+import de.lbl.multifunctiontool.draganddropspot.DragAndDropSpotData.SpotColor;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class DragAndDropSpotListener implements OnTouchListener,OnDragListener
