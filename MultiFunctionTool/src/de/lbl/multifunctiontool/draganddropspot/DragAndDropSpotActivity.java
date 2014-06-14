@@ -5,16 +5,20 @@ import java.io.IOException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.Toast;
 import de.lbl.multifunctiontool.R;
+import de.lbl.multifunctiontool.notification.NotificationActivity;
 
 public class DragAndDropSpotActivity extends ActionBarActivity
 {
 
+	public static int id = 0;
 	@Override
 	public void onCreate(Bundle state)
 	{
@@ -25,6 +29,8 @@ public class DragAndDropSpotActivity extends ActionBarActivity
 		{
 			getSupportFragmentManager().beginTransaction().add(R.id.container_draganddropspot, new DragAndDropSpotFragment()).commit();
 		}
+		
+		id++;
 	}
 	
 	
@@ -48,5 +54,26 @@ public class DragAndDropSpotActivity extends ActionBarActivity
 			return rootView;
 		}
 
+	}
+	
+	@Override
+	public void onResume()
+	{
+		super.onResume();
+		Bundle bundle = getIntent().getExtras();
+		if (bundle != null) {
+		    String notificationData = bundle.getString(NotificationActivity.NOTIFICATION_DATA);
+		    if (notificationData != null) {
+		        Log.d("detectPushNotificationMessage", "notificationData =" + notificationData);
+		        handlePushNotificationMessage(notificationData);
+		    }
+
+		}
+	}
+
+
+	private void handlePushNotificationMessage(String notificationData)
+	{
+		Toast.makeText(this, notificationData, Toast.LENGTH_LONG).show();
 	}
 }

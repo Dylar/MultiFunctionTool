@@ -32,7 +32,7 @@ public class ListViewActivity extends ListActivity
 			.append(name)
 			.append("Activity");
 			
-			Log.d("MUH", sb.toString());
+			Log.d("ListView Act Path", sb.toString());
 			
 			Class clazz = Class.forName(sb.toString());
 			Intent intent = new Intent(this, clazz);
